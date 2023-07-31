@@ -24,7 +24,7 @@ try:
     insert_FIO.send_keys('Тест Тест Тест')  # Заполнить ФИО
 
     insert_PHONE = driver.find_element(By.NAME, 'smsPhoneNumber')
-    insert_PHONE.send_keys('9998881100')  # Заполнить Номер телефона
+    insert_PHONE.send_keys('1111111111')  # Заполнить Номер телефона
 
     insert_EMAIL = driver.find_element(By.NAME, 'email')
     insert_EMAIL.send_keys('test@test.ru')  # Заполнить Адресс Эл.Почты
