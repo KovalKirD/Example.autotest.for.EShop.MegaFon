@@ -51,6 +51,7 @@ try:
     select_BY = driver.find_element(By.CSS_SELECTOR, '.FixedSummary-module__main--uwywf button')
     select_BY.click()  # Нажать "Оформить заказ"
 
+    # Проверка доступности поля ввода SMS подтверждения заказа
     select_SMS = driver.find_element(By.CSS_SELECTOR, '.ConfirmSmsCode-module__confirmSmsCode--2klTl input')
     assert select_SMS is not None, 'Тест не пройден, элемент "select_SMS" не найден, проверьте поле ввода SMS подтверждения заказа'
 
@@ -58,4 +59,4 @@ finally:
     time.sleep(10)  # Задержка 10сек.
     driver.quit()  # Выход
     print('Тест завершен')
-    # Пустая строка
+# Пустая строка
