@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By      # Класс: "Поиск эл�
 try:
     driver = webdriver.Chrome()                      # инициализируем драйвер браузера
     driver.get('https://moscow.shop.megafon.ru/')    # открыть страницу
-    driver.implicitly_wait(7)   # Ждать 7 сек. до поиска элемента
+    driver.implicitly_wait(7)   # Ждать 7сек. до поиска элемента
     # Закрыть попап
     # time.sleep(5)
     # driver.find_element(By.CSS_SELECTOR, 'div.popmechanic-main .popmechanic-close').click()
@@ -36,7 +36,7 @@ try:
     select_SSM = driver.find_element(By.CSS_SELECTOR, '.StoreLocatorAddress-module__storeLocatorAddress--hhyuB  button')
     select_SSM.click()  # Нажать кнопку "Выбрать адрес самовывоза"
 
-    time.sleep(3)
+    time.sleep(3)  # Для загрузки карты
     select_LIST_SSM = driver.find_element(By.CSS_SELECTOR, '.Tabs-module__tabs--jbcOV > div:nth-child(2)')
     select_LIST_SSM.click()  # Нажать кнопку "Списком"
 
@@ -57,6 +57,6 @@ try:
 
 finally:
     time.sleep(10)  # Задержка 10сек.
-    driver.quit()  # Выход
+    driver.quit()   # Выход
     print('Тест завершен')
 # Пустая строка
