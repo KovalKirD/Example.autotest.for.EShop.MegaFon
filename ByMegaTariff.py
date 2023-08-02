@@ -1,4 +1,4 @@
-# Оформление заказа на подключение МегаТариф
+# е2е Оформление заказа на подключение МегаТариф
 import time                                      # Модуль Время
 from selenium import webdriver                   # Пакет Вебдрайвер
 from selenium.webdriver.common.by import By      # Класс: "Поиск элементов"
