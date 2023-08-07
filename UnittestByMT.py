@@ -55,7 +55,7 @@ class MyTestCase(unittest.TestCase):
 
         # Проверка доступности поля ввода SMS подтверждения заказа
         select_SMS = driver.find_element(By.CSS_SELECTOR, '.ConfirmSmsCode-module__confirmSmsCode--2klTl input')
-        self.assertIsNotNone(select_SMS, 'Тест не пройден, элемент "select_SMS" не найден, проверьте поле ввода SMS подтверждения заказа')
+        self.assertIsNotNone(select_SMS, 'Ошибка: Элемент "select_SMS" не найден, проверьте поле ввода SMS подтверждения заказа')
 
 if __name__ == '__main__':
     unittest.main()
