@@ -1,19 +1,9 @@
 # Pytest: Оформление заказа на подключение МегаТариф
-import pytest                                    # Пакет pytest
 import time                                      # Модуль Время
-from selenium import webdriver                   # Пакет Вебдрайвер
 from selenium.webdriver.common.by import By      # Класс: "Поиск элементов"
 
 # URL бранча
 link = ['https://moscow.shop.megafon.ru/', 'https://spb.shop.megafon.ru/']
-
-# фикстура запуска и закрытия браузера
-@pytest.fixture()
-def browser():
-    browser = webdriver.Chrome()  # инициализируем драйвер браузера
-    browser.implicitly_wait(10)   # ждать 10 сек. до поиска элемента
-    yield browser                 # финализатор
-    browser.quit()                # закрыть браузер
 
 # Текст-кейс: e2e покупка МегаТарифа(MT)(ПВЗ, Нал.Расч)
 # Проверка: отображение поля ввода sms кода подтверждения заказа
