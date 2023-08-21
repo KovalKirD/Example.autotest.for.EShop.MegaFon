@@ -1,4 +1,4 @@
-# Конфигурация тестов
+# Конфигурация Тестов
 import pytest                   # пакет pytest
 from selenium import webdriver  # пакет Вебдрайвер
 
