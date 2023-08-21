@@ -1,4 +1,5 @@
 # Страница Корзины
+import time
 from .base_page import BasePage
 from selenium.webdriver.common.by import By
 
@@ -24,6 +25,7 @@ class BasketPage(BasePage):
                                           '.StoreLocatorAddress-module__storeLocatorAddress--hhyuB  button')
         select_SSM.click()  # Нажать кнопку "Выбрать адрес самовывоза"
 
+        time.sleep(3)  # на загрузку карты
         select_LIST_SSM = self.browser.find_element(By.CSS_SELECTOR, '.Tabs-module__tabs--jbcOV > div:nth-child(2)')
         select_LIST_SSM.click()  # Нажать кнопку "Списком"
 
