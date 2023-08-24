@@ -1,46 +1,52 @@
 # Страница Корзины
 import time
 from .base_page import BasePage
-from selenium.webdriver.common.by import By
+from .locators import BasketPageLocators
 
 class BasketPage(BasePage):
-    # КОРЗИНА: ОФОРМЛЕНИЕ ЗАКАЗА
-    def basket_order_sim(self):
-        # ПОЛУЧАТЕЛЬ
-        insert_FIO = self.browser.find_element(By.NAME, 'fullName')
-        insert_FIO.send_keys('Тест Тест Тест')  # Заполнить ФИО
+  # ПОЛУЧАТЕЛЬ
+    def insert_fio_in_input(self):  # Заполнить ФИО
+        input_fio = self.browser.find_element(*BasketPageLocators.INPUT_FIO)
+        input_fio.send_keys('Тест Тест Тест')
 
-        insert_PHONE = self.browser.find_element(By.NAME, 'smsPhoneNumber')
-        insert_PHONE.send_keys('1111111111')  # Заполнить Номер телефона
+    def insert_phone_in_input(self):  # Заполнить Номер телефона
+        input_phone = self.browser.find_element(*BasketPageLocators.INPUT_PHONE)
+        input_phone.send_keys('1111111111')
 
-        insert_EMAIL = self.browser.find_element(By.NAME, 'email')
-        insert_EMAIL.send_keys('test@test.ru')  # Заполнить Адресс Эл.Почты
+    def insert_email_in_input(self):  # Заполнить Адресс Эл.Почты
+        input_email = self.browser.find_element(*BasketPageLocators.INPUT_EMAIL)
+        input_email.send_keys('test@test.ru')
 
-        # СПОСОБ ПОЛУЧЕНИЯ
-        select_PICUP = self.browser.find_element(By.CSS_SELECTOR,
-                                            '.Checkout-module__main--a-NUG > div:nth-child(2) > div > div:nth-child(4) > div:nth-child(2) > div > :nth-child(2)')
-        select_PICUP.click()  # Выбрать Способ Получения: Самовывоз
+  # СПОСОБ ПОЛУЧЕНИЯ
+    def select_delivery_pickup_method(self):  # Выбрать Способ Получения: Самовывоз
+        pickup_delivery = self.browser.find_element(*BasketPageLocators.DELIVERY_METHOD_PICKUP)
+        pickup_delivery.click()
 
-        select_SSM = self.browser.find_element(By.CSS_SELECTOR,
-                                          '.StoreLocatorAddress-module__storeLocatorAddress--hhyuB  button')
-        select_SSM.click()  # Нажать кнопку "Выбрать адрес самовывоза"
+    def click_button_select_address_store(self):  # Нажать кнопку "Выбрать адрес самовывоза"
+        button_select_address_store = self.browser.find_element(*BasketPageLocators.BUTTON_SELECT_ADDRESS_STORE)
+        button_select_address_store.click()
 
+    def select_list_stores(self):  # Выбрать: "Списком"
         time.sleep(3)  # на загрузку карты
-        select_LIST_SSM = self.browser.find_element(By.CSS_SELECTOR, '.Tabs-module__tabs--jbcOV > div:nth-child(2)')
-        select_LIST_SSM.click()  # Нажать кнопку "Списком"
+        list_stores = self.browser.find_element(*BasketPageLocators.LIST_STORES)
+        list_stores.click()
 
-        select_PVZ = self.browser.find_element(By.CSS_SELECTOR, '.mf-offices-panel__pickups-list > a :nth-child(3) > .mf-offices-panel__item-select')
-        select_PVZ.click()  # Выбрать ПВЗ
+    def click_button_select_pvz_in_list_store(self):  # Нажать кнопу "Выбрать" ПВЗ
+        button_select_pvz = self.browser.find_element(*BasketPageLocators.BUTTON_SELECT_PVZ)
+        button_select_pvz.click()
 
-        # СПОСОБ ОПЛАТЫ
-        select_NAL = self.browser.find_element(By.CSS_SELECTOR, '.Checkout-module__main--a-NUG > div:nth-child(2) > div > div:nth-child(6) > .OptionsWrapper-module__options--I4ac4 > div:nth-child(2)')
-        select_NAL.click()  # Нажать "Оплата при получении"
+  # СПОСОБ ОПЛАТЫ
+    def select_cash_payment_method(self):  # выбрать "Оплата при получении"
+        payment_cash = self.browser.find_element(*BasketPageLocators.PAYMENT_METHOD_CASH)
+        payment_cash.click()
 
-        # ОФОРМИТЬ ЗАКАЗ
-        select_BY = self.browser.find_element(By.CSS_SELECTOR, '.FixedSummary-module__main--uwywf button')
-        select_BY.click()  # Нажать "Оформить заказ"
+  # ОФОРМИТЬ ЗАКАЗ
+    def click_checkout_button(self):  # нажать кнопку "Оформить заказ"
+        checkout_button = self.browser.find_element(*BasketPageLocators.BUTTON_CHECKOUT)
+        checkout_button.click()
 
-        # Проверка доступности поля ввода SMS подтверждения заказа
-        select_SMS = self.browser.find_element(By.CSS_SELECTOR, '.ConfirmSmsCode-module__confirmSmsCode--2klTl input')
-        assert select_SMS is not None, \
-            'Ошибка: Элемент "select_SMS" не найден, проверьте поле ввода SMS подтверждения заказа'
+  # Проверка доступности поля ввода SMS подтверждения заказа
+    def should_be_input_confirm_sms_code(self):
+        input_confirm_sms_code = self.browser.find_element(*BasketPageLocators.INPUT_CONFIRM_SMS_CODE)
+        assert input_confirm_sms_code is not None, \
+            'Ошибка: Элемент "input_confirm_sms_code" не найден, проверьте поле ввода SMS подтверждения заказа'
