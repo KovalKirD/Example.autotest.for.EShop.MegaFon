@@ -19,12 +19,17 @@ class BasketPage(BasePage):
 
   # СПОСОБ ПОЛУЧЕНИЯ
     def select_delivery_pickup_method(self):  # Выбрать Способ Получения: Самовывоз
-        pickup_delivery = self.browser.find_element(*BasketPageLocators.DELIVERY_METHOD_PICKUP)
+        pickup_delivery = self.browser.find_element(*BasketPageLocators.GET_METHOD_PICKUP)
         pickup_delivery.click()
 
+  # АДРЕС
     def click_button_select_address_store(self):  # Нажать кнопку "Выбрать адрес самовывоза"
         button_select_address_store = self.browser.find_element(*BasketPageLocators.BUTTON_SELECT_ADDRESS_STORE)
         button_select_address_store.click()
+
+    def click_button_select_address_delivery(self): # Нажать кнопку "Добавить адрес доставки"
+        button_select_address_delivery = self.browser.find_element(*BasketPageLocators.BUTTON_SELECT_ADDRESS_DELIVERY)
+        button_select_address_delivery.click()
 
     def select_list_stores(self):  # Выбрать: "Списком"
         time.sleep(3)  # на загрузку карты
@@ -34,6 +39,10 @@ class BasketPage(BasePage):
     def click_button_select_pvz_in_list_store(self):  # Нажать кнопу "Выбрать" ПВЗ
         button_select_pvz = self.browser.find_element(*BasketPageLocators.BUTTON_SELECT_PVZ)
         button_select_pvz.click()
+
+    def should_be_selected_delivery_ship_method(self):  # проверка: выбран способ получения "Доставка"
+        assert self.is_element_selected(*BasketPageLocators.GET_METHOD_DELIVERY_SELECTED), \
+            'Ошибка: Способ получения "Доставка" не выбран'
 
   # СПОСОБ ОПЛАТЫ
     def select_cash_payment_method(self):  # выбрать "Оплата при получении"
@@ -45,8 +54,7 @@ class BasketPage(BasePage):
         checkout_button = self.browser.find_element(*BasketPageLocators.BUTTON_CHECKOUT)
         checkout_button.click()
 
-  # Проверка доступности поля ввода SMS подтверждения заказа
-    def should_be_input_confirm_sms_code(self):
+    def should_be_input_confirm_sms_code(self):  # Проверка доступности поля ввода SMS подтверждения заказа
         input_confirm_sms_code = self.browser.find_element(*BasketPageLocators.INPUT_CONFIRM_SMS_CODE)
         assert input_confirm_sms_code is not None, \
             'Ошибка: Элемент "input_confirm_sms_code" не найден, проверьте поле ввода SMS подтверждения заказа'
