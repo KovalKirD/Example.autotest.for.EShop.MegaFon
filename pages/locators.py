@@ -11,8 +11,12 @@ class BasketPageLocators:
     INPUT_PHONE = (By.NAME, 'smsPhoneNumber')
     INPUT_EMAIL = (By.NAME, 'email')
     # СПОСОБ ПОЛУЧЕНИЯ
-    DELIVERY_METHOD_PICKUP = (By.CSS_SELECTOR, '.Checkout-module__main--a-NUG > div:nth-child(2) > div > div:nth-child(4) > div:nth-child(2) > div > :nth-child(2)')
+    GET_METHOD_PICKUP = (By.CSS_SELECTOR, '.Checkout-module__main--a-NUG > div:nth-child(2) > div > div:nth-child(4) > div:nth-child(2) > div > :nth-child(2)')
+    GET_METHOD_DELIVERY = (By.CSS_SELECTOR, '.Checkout-module__main--a-NUG > div:nth-child(2) > div > div:nth-child(4) > div:nth-child(2) > div > :nth-child(1)')
+    GET_METHOD_DELIVERY_SELECTED = (By.CSS_SELECTOR, '.Checkout-module__main--a-NUG > div:nth-child(2) > div > div:nth-child(4) > div:nth-child(2) > div > :nth-child(1).Option-module__selected--YFDSZ')
+    # АДРЕС
     BUTTON_SELECT_ADDRESS_STORE = (By.CSS_SELECTOR, '.StoreLocatorAddress-module__storeLocatorAddress--hhyuB  button')
+    BUTTON_SELECT_ADDRESS_DELIVERY = (By.CSS_SELECTOR, '.AddressesCheckout-module__addressesCheckout--xlmQ9 button')
     LIST_STORES = (By.CSS_SELECTOR, '.Tabs-module__tabs--jbcOV > div:nth-child(2)')
     BUTTON_SELECT_PVZ = (By.CSS_SELECTOR, '.mf-offices-panel__pickups-list > a :nth-child(3) > .mf-offices-panel__item-select')
     # СПОСОБ ОПЛАТЫ
