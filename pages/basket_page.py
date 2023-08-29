@@ -44,10 +44,35 @@ class BasketPage(BasePage):
         assert self.is_element_selected(*BasketPageLocators.GET_METHOD_DELIVERY_SELECTED), \
             'Ошибка: Способ получения "Доставка" не выбран'
 
+    def input_address_delivery(self):  # Заполнить адрес доставки
+        address_delivery = self.browser.find_element(*BasketPageLocators.INPUT_ADDRESS_DELIVERY)
+        address_delivery.send_keys('Оружейный пер, д, 41')
+
+    def click_button_save_address_delivery(self):  # Нажать кнопку "Сохранить"
+        button_save_address_delivery = self.browser.find_element(*BasketPageLocators.BUTTON_SAVE_ADDRESS_DELIVERY)
+        button_save_address_delivery.click()
+
+  # ТИП ДОСТАВКИ
+    def select_type_delivery_courier(self):  # Выбрать "Курьером"
+        type_delivery_courier = self.browser.find_element(*BasketPageLocators.TYPE_DELIVERY_COURIER)
+        type_delivery_courier.click()
+
+    def select_type_delivery_express(self):  # Выбрать "Экспресс-доставка"
+        type_delivery_express = self.browser.find_element(*BasketPageLocators.TYPE_DELIVERY_EXPRESS)
+        type_delivery_express.click()
+
   # СПОСОБ ОПЛАТЫ
     def select_cash_payment_method(self):  # выбрать "Оплата при получении"
         payment_cash = self.browser.find_element(*BasketPageLocators.PAYMENT_METHOD_CASH)
         payment_cash.click()
+
+    def select_cash_payment_method_for_get_method_delivery(self):  # выбрать "Оплата при получении"
+        payment_cash = self.browser.find_element(*BasketPageLocators.PAYMENT_METHOD_CASH_FOR_GET_METHOD_DELIVERY)
+        payment_cash.click()
+
+  # ДАТА И ВРЕМЯ ДОСТАВКИ
+    def should_be_span_date_delivery(self):
+        assert self.is_element_present(*BasketPageLocators.SPAN_DATE_DELIVERY)
 
   # ОФОРМИТЬ ЗАКАЗ
     def click_checkout_button(self):  # нажать кнопку "Оформить заказ"
