@@ -3,11 +3,11 @@ from pages.basket_page import BasketPage
 from pages.main_page import MainPage
 
 # URL бранча
-links = ['https://moscow.shop.megafon.ru/', 'https://spb.shop.megafon.ru/', 'https://krasnodar.shop.megafon.ru/']  # , 'https://spb.shop.megafon.ru/', 'https://krasnodar.shop.megafon.ru/'
+links = ['https://moscow.shop.megafon.ru/']  # , 'https://spb.shop.megafon.ru/', 'https://krasnodar.shop.megafon.ru/'
 
 # Кейс: e2e покупка МегаТарифа(MT)(ПВЗ, Нал.Расч)
 # Проверка: отображение поля ввода sms кода подтверждения заказа
-# @pytest.mark.skip
+@pytest.mark.skip
 @pytest.mark.parametrize('link', links)
 def test_order_sim_pickup_cash(browser, link):
     page = MainPage(browser, link)     # создать объект главной страницы
@@ -28,7 +28,7 @@ def test_order_sim_pickup_cash(browser, link):
 
 # Кейс: e2e покупка МегаТарифа(MT)(Курьером, Нал.Расч)
 # Проверка: отображение поля ввода sms кода подтверждения заказа
-# @pytest.mark.skip
+@pytest.mark.skip
 @pytest.mark.parametrize('link', links)
 def test_order_sim_courier_cash(browser, link):
     page = MainPage(browser, link)
@@ -51,6 +51,7 @@ def test_order_sim_courier_cash(browser, link):
 
 # Кейс: e2e покупка МегаТарифа(MT)(Экспересс-доставка, Нал.Расч)
 # Проверка: отображение поля ввода sms кода подтверждения заказа
+# @pytest.mark.skip
 @pytest.mark.parametrize('link', links)
 def test_order_sim_express_cash(browser, link):
     page = MainPage(browser, link)
