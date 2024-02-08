@@ -5,7 +5,7 @@ from selenium import webdriver  # пакет Вебдрайвер
 # фикстура запуска/закрытия браузера
 @pytest.fixture(scope='function')
 def browser():
-    browser = webdriver.Chrome()  # инициализируем драйвер браузера
+    browser = webdriver.Firefox()  # инициализируем драйвер браузера
     print('\nbrowser start for test')
     yield browser                 # финализатор
     print('\nbrowser quit')
