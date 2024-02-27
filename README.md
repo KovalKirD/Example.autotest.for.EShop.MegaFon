@@ -1,4 +1,7 @@
-# Tests-For-EShop-MegaFon
-Тесты для Интернет-Магазина МегаФон
+# TExample.autotests.for.EShop.MegaFon
+## Пример автотеста для Интернет-Магазина МегаФон
 
-https://moscow.shop.megafon.ru/
+Ресурс: https://moscow.shop.megafon.ru/  
+Язык: **Python**  
+Фреймворк: **Selenium WebDriver**  
+Окружение: **Pytest**  
