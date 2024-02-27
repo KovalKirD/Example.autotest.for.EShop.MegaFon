@@ -5,3 +5,4 @@
 Язык: **Python**  
 Фреймворк: **Selenium WebDriver**  
 Окружение: **Pytest**  
+Тип теста: **Smoke**
