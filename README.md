@@ -4,5 +4,5 @@
 Ресурс: https://moscow.shop.megafon.ru/  
 Язык: **Python**  
 Фреймворк: **Selenium WebDriver**  
-Окружение: **Pytest**  
+Среда тестирования: **Pytest**  
 Тип теста: **Smoke**
