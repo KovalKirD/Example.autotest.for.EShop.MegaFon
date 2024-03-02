@@ -1,6 +1,6 @@
 import pytest
-from pages.basket_page import BasketPage
-from pages.main_page import MainPage
+from .pages.basket_page import BasketPage
+from .pages.main_page import MainPage
 
 # URL бранча
 links = ['https://moscow.shop.megafon.ru/']  # , 'https://spb.shop.megafon.ru/', 'https://krasnodar.shop.megafon.ru/'
