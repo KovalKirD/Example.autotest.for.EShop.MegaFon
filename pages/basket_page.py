@@ -64,6 +64,7 @@ class BasketPage(BasePage):
   # СПОСОБ ОПЛАТЫ
     def select_cash_payment_method(self):  # выбрать "Оплата при получении"
         payment_cash = self.browser.find_element(*BasketPageLocators.PAYMENT_METHOD_CASH)
+        assert self.is_element_clickable(*BasketPageLocators.PAYMENT_METHOD_CASH), 'Element not clickable'
         payment_cash.click()
 
     def select_cash_payment_method_for_get_method_delivery(self):  # выбрать "Оплата при получении"
@@ -83,3 +84,7 @@ class BasketPage(BasePage):
         input_confirm_sms_code = self.browser.find_element(*BasketPageLocators.INPUT_CONFIRM_SMS_CODE)
         assert input_confirm_sms_code is not None, \
             'Ошибка: Элемент "input_confirm_sms_code" не найден, проверьте поле ввода SMS подтверждения заказа'
+
+    def should_clickable_checkout_button(self):  # проверка активности кнопки "Оформить заказ"
+        assert self.is_element_clickable(*BasketPageLocators.BUTTON_CHECKOUT), \
+            'Button is not clickable'
