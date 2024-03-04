@@ -25,3 +25,10 @@ class BasePage:
         except NoSuchElementException:
             return False
         return True
+
+    def is_element_clickable(self, how, what):  # элемент кликабельный
+        try:
+            WebDriverWait(self.browser, 10).until(EC.element_to_be_clickable((how, what)))
+        except NoSuchElementException:
+            return False
+        return True
