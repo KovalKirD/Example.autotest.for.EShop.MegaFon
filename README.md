@@ -6,3 +6,8 @@
 Фреймворк: **Selenium WebDriver**  
 Среда тестирования: **Pytest**  
 Тип теста: **Smoke**
+
+Запуск:
+```
+pytest -v --tb=line --html=report.html --browser_name=chrome
+```
