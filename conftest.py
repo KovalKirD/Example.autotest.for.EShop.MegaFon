@@ -3,7 +3,7 @@ import pytest                   # пакет pytest
 from selenium import webdriver  # пакет Вебдрайвер
 
 def pytest_addoption(parser):  # обработчик опции
-    parser.addoption('--browser_name', action='store', default='firefox',
+    parser.addoption('--browser_name', action='store', default='chrome',
                      help='Choose browser: chrome or firefox')
 
 # фикстура запуска/закрытия браузера
