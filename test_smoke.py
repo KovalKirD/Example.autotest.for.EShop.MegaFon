@@ -7,10 +7,10 @@ from .pages.main_page import MainPage
 # Ожидаемый результат: Кнопка "Оформить заказ" кликабельна
 
 # URL бранча
-links = ['https://moscow.shop.megafon.ru/']  # , 'https://spb.shop.megafon.ru/', 'https://krasnodar.shop.megafon.ru/'
+links = ['https://moscow.shop.megafon.ru/', 'https://spb.shop.megafon.ru/', 'https://krasnodar.shop.megafon.ru/']
 
 #Тест-Кейс 1: ПВЗ, Нал.Расч
-@pytest.mark.skip
+# @pytest.mark.skip
 @pytest.mark.parametrize('link', links)
 def test_order_sim_pickup_cash(browser, link):
     page = MainPage(browser, link)     # создать объект главной страницы
@@ -50,7 +50,7 @@ def test_order_sim_courier_cash(browser, link):
     page.should_clickable_checkout_button()
 
 # Тест-Кейс 3: Экспересс-доставка, Нал.Расч
-@pytest.mark.skip
+# @pytest.mark.skip
 @pytest.mark.parametrize('link', links)
 def test_order_sim_express_cash(browser, link):
     page = MainPage(browser, link)
