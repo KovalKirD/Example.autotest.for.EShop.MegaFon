@@ -2,7 +2,7 @@
 ## Пример автотеста для Интернет-Магазина МегаФон
 
 Ресурс: https://moscow.shop.megafon.ru/  
-Язык: **Python**  
+ЯП: **Python**  
 Фреймворк: **Selenium WebDriver**  
 Среда тестирования: **Pytest**  
 Тип теста: **Smoke**
