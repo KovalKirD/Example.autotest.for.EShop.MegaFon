@@ -12,6 +12,10 @@
 ```
 python -m venv test_venv
 ```
+Активировать окружение:
+```
+source test_venv/bin/activate
+```
 Установить зависимости:
 ```
 pip install -r requirements.txt
