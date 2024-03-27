@@ -39,5 +39,9 @@ pip install -r requirements.txt
 ```
 Выполнить тест:
 ```
-pytest -v --tb=line --html=report.html --browser_name=chrome
+pytest -v --tb=line
 ```
+Опции:  
+```--ui=headless```             запуск браузера без UI  
+```--browser_name=chrome```     выбор барузера chrome/firefox  
+```--html=report/report.html``` генерация отчета в html  
