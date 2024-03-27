@@ -20,7 +20,7 @@
 3. Экспересс-доставка, Нал.Расч
 
 ### Запуск в CLI:
-#### Пердустановлено:
+#### Предустановить:
 1. Python
 2. Google Chrome / Mozila FireFox
 3. chromdriver / geckodriver
