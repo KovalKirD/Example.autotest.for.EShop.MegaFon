@@ -2,6 +2,7 @@
 import pytest                   # пакет pytest
 from selenium import webdriver  # пакет Вебдрайвер
 from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.chrome.options import Options
 
 def pytest_addoption(parser):  # обработчик опции
     parser.addoption('--browser_name', action='store', default='firefox',
