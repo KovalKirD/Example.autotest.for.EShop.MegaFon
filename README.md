@@ -1,5 +1,5 @@
-# Example.autotest.for.EShop.MegaFon
-## Пример автотеста для Интернет-Магазина МегаФон
+# Example.UI.autotest.for.EShop.MegaFon
+## Пример UI автотеста для Интернет-Магазина МегаФон
  
 ЯП: **Python**  
 Фреймворк: **Selenium WebDriver**  
